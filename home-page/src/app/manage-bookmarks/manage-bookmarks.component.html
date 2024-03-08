@@ -1,0 +1,27 @@
+<div class="manage-bookmarks-wrapper container">
+    
+    <div class="sidebar">
+        <p class="sidebar-heading">Your bookmarks</p>
+
+        <div class="sidebar-items">
+            <a 
+            [routerLink]="bookmark.id"
+            routerLinkActive="selected"
+            class="sidebar-item"
+            (click)="toggleIconFalse()"
+            *ngFor="let bookmark of bookmark$ | async"
+            >
+            
+            {{ bookmark.name }}
+        
+            </a>
+        </div>
+    </div>
+
+    <div class="content has-blurred-white-bg">
+        <i class="material-icons" *ngIf="toggleIcon">settings</i>
+        <ng-component>
+            <router-outlet></router-outlet>
+        </ng-component>
+    </div>
+</div>

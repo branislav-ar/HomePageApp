@@ -1,0 +1,7 @@
+.add-todo-wrapper {
+  max-height: 100%;
+  overflow: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=add-todo.component.css.map */

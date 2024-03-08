@@ -1,0 +1,10 @@
+.notes-wrapper {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.add-btn i {
+  margin-right: 8px;
+  margin-left: -5px;
+}
+/*# sourceMappingURL=notes.component.css.map */

@@ -1,0 +1,137 @@
+.tabs {
+    display: flex;
+    margin: 12px;
+    margin-top: 50px;
+    padding: 3px;
+
+    background-color: rgba(white, 0.25);
+    backdrop-filter: blur(2px);
+    
+    border-radius: 10px;
+}
+
+.tab {
+    padding: 4px;
+    z-index: 1;
+    text-decoration: none;
+    position: relative;
+}
+
+.tab-tile {
+    display: flex;
+    padding: 15px;
+    position: relative;
+
+    transition: all 0.2s ease-out;
+    
+/*     background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+    border-radius: 10px; */
+
+    cursor: pointer;
+
+    i {
+        color: #222;
+    }
+}
+
+.tab.selected .tab-tile {
+    transform: translateY(-50%);
+
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 0, 0, 1.5);
+}
+
+// STYLES FOR THE TAB TILE BACKGROUND SHAPE
+
+.tab-tile::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    /* background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+    border-radius: 10px; */
+    
+    transition: all 0.2s ease-out;
+
+    z-index: -1;
+
+    opacity: 0.9;
+}
+
+.bookmarks-tab .tab-tile::before {
+    background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+    border-radius: 10px;
+}
+
+.todos-tab .tab-tile::before {
+    background: linear-gradient(45deg, #a2ffff, #e2d2fd);
+    border-radius: 10px;
+}
+
+.notes-tab .tab-tile::before {
+    background: linear-gradient(45deg, #d2cdff, #2fffbc);
+    border-radius: 10px;
+}
+
+.tab-tile:hover::before {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.tab.selected .tab-tile::before {
+    transform: scale(1.1);
+    opacity: 1;
+    border-radius: 50%;
+
+    box-shadow: 0px 7px 17px rgba(black, 0.2);
+
+    transition-delay: 0.05s;
+}
+
+// END OF STYLES FOR THE TAB TILE BACKGROUND SHAPE
+
+// STYLES FOR THE UNDERLINE EFFECT
+
+.tab::after {
+    content: '';
+
+    position: absolute;
+    
+    left: 0;
+    right: 0;
+    bottom: -2px;
+
+    height: 2px;
+    width: 55%;
+
+    margin: auto;
+
+    background-color: rgba(white, 0.85);
+
+    border-radius: 2px;
+
+    transition: all 0.3s;
+
+    // hide by default
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.tab.selected::after {
+    opacity: 1;
+    transform: scaleX(1);
+
+    transition-delay: 0.05s;
+}
+
+.tab.selected {
+    outline: none;
+}
+
+// END OF STYLES FOR THE UNDERLINE EFFECT
+

@@ -1,0 +1,35 @@
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { Bookmark } from '../shared/bookmark-shared/bookmark.model';
+import { BookmarkService } from '../shared/bookmark-shared/bookmark.service';
+import { NotificationService } from '../shared/notifications/notification.service';
+
+@Component({
+  selector: 'app-add-bookmark',
+  templateUrl: './add-bookmark.component.html',
+  styleUrls: ['./add-bookmark.component.css']
+})
+export class AddBookmarkComponent implements OnInit {
+
+  constructor(
+    private bookmarkService: BookmarkService, 
+    private router: Router,
+    private notificationService: NotificationService
+  ) { }
+
+  ngOnInit() {
+  }
+
+  onFormSubmit(form: NgForm) {
+    const { name, url } = form.value;
+
+    const bookmark = new Bookmark(name, url);
+    this.bookmarkService.addBookmark(bookmark);
+    
+    this.router.navigateByUrl('/bookmarks');
+
+    this.notificationService.show('Bookmark created!')
+  }
+
+}

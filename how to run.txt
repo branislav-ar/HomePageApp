@@ -1,0 +1,5 @@
+- open "home-page"
+- cmd > code .
+- ng serve
+
+ili "code . && ng serve" u konzoli u "home-page"

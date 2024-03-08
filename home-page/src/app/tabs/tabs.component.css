@@ -1,0 +1,123 @@
+.tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 12px;
+  margin-top: 50px;
+  padding: 3px;
+  background-color: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border-radius: 10px;
+}
+
+.tab {
+  padding: 4px;
+  z-index: 1;
+  text-decoration: none;
+  position: relative;
+}
+
+.tab-tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  position: relative;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  /*     background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+    border-radius: 10px; */
+  cursor: pointer;
+}
+
+.tab-tile i {
+  color: #222;
+}
+
+.tab.selected .tab-tile {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0, 1.5);
+          transition-timing-function: cubic-bezier(0, 0, 0, 1.5);
+}
+
+.tab-tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+    border-radius: 10px; */
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.bookmarks-tab .tab-tile::before {
+  background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+  border-radius: 10px;
+}
+
+.todos-tab .tab-tile::before {
+  background: linear-gradient(45deg, #a2ffff, #e2d2fd);
+  border-radius: 10px;
+}
+
+.notes-tab .tab-tile::before {
+  background: linear-gradient(45deg, #d2cdff, #2fffbc);
+  border-radius: 10px;
+}
+
+.tab-tile:hover::before {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+}
+
+.tab.selected .tab-tile::before {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 7px 17px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 7px 17px rgba(0, 0, 0, 0.2);
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 55%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.tab.selected::after {
+  opacity: 1;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.tab.selected {
+  outline: none;
+}
+/*# sourceMappingURL=tabs.component.css.map */

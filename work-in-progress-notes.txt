@@ -1,0 +1,15 @@
+npm install -g @angular/cli
+ng new home-page --style=css --routing --skip-tests
+
+PRE"ng serve --open" odradi:
+set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
+Get-ExecutionPolicy
+Get-ExecutionPolicy -list
+
+ng serve --open
+
+npm install -g sass
+instaliraj sass ekstenyiju na VS Code!
+
+ng generate component tabs
+ng generate component bookmarks
